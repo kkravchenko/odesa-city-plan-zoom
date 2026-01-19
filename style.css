@@ -71,13 +71,14 @@
   background: rgba(0, 0, 0, 0.6);
   justify-content: center;
   align-items: center;
+  z-index: 999;
 }
 #modal .modal-container {
   position: relative;
   background: #fff;
-  padding: 20px;
+  padding: 30px 20px 20px;
   width: 500px;
-  height: 400px;
+  height: 450px;
   animation: zoomIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
   transform: scale(1);
   text-align: center;
@@ -87,10 +88,14 @@
 }
 #modal .modal-container #close {
   position: absolute;
-  top: 1px;
+  top: 12px;
   font-size: 24px;
   right: 10px;
   cursor: pointer;
+  z-index: 10;
+  height: 20px;
+  width: 20px;
+  color: #000;
 }
 
 @keyframes fadeInBg {

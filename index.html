@@ -1,15 +1,16 @@
 <html>
 <head>
     <title>SVG pan</title>
-    <script src="https://unpkg.com/@panzoom/panzoom@4.6.1/dist/panzoom.min.js"></script>
-    <script src="script.js"></script>
-    <link href="style.css" rel="stylesheet"/>
 </head>
 <body>
 
+<script src="https://unpkg.com/@panzoom/panzoom@4.6.1/dist/panzoom.min.js"></script>
+<script src="https://cdn.jsdelivr.net/gh/kkravchenko/odesa-city-plan-zoom/script.js"></script>
+<link href="https://cdn.jsdelivr.net/gh/kkravchenko/odesa-city-plan-zoom/style.css" rel="stylesheet"/>
 <div class="zoom-image">
     <div class="panzoom-parent">
-        <img alt="bud2-plan" id="map-svg" src="bud2-plan.svg"/>
+        <img alt="bud2-plan" id="map-svg"
+             src="https://cdn.jsdelivr.net/gh/kkravchenko/odesa-city-plan-zoom/bud2-plan.svg"/>
         <svg class="hotspots">
             <polygon class="room-area" points="0,0 111,0 111,136 78,136 78,111 0,111"/>
             <polygon class="room-area" points="108,11 197,11 197,138 135,138 135,90 108,90"/>
