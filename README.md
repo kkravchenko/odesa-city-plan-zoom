@@ -3,5 +3,5 @@
 Building 2.
 
 ```aiignore
-Open index.html in broweser
+Open index.html in browser
 ```
