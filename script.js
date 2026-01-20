@@ -77,13 +77,13 @@ document.addEventListener('DOMContentLoaded', () => {
             const points = polygon.getAttribute('points');
 
             modalSvg.innerHTML = '';
-            const modalW = 500;
-            const modalH = 400;
+            const modalW = window.outerWidth < 440 ? 375 : 500;
+            const modalH = window.outerWidth < 440 ? 337.5 : 400;
 
             console.log(bbox)
             const scaleX = modalW / bbox.width;
             const scaleY = modalH / bbox.height;
-            
+
             const scale = Math.min(scaleX, scaleY);
 
             const corX = 0; //(modalW - bbox.width * scale) / 2;

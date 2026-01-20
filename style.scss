@@ -38,7 +38,7 @@
 
   &-buttons {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
     position: absolute;
     bottom: -34px;
@@ -131,5 +131,14 @@
   to {
     opacity: 1;
     transform: scale(1);
+  }
+}
+
+@media screen and (max-width: 440px) {
+  .zoom-image {
+    transform: scale(.8);
+  }
+  .modal-container {
+    transform: scale(.75) !important;
   }
 }
