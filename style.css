@@ -1,129 +1,145 @@
 .zoom-image {
-  margin: 40px auto;
-  position: relative;
-  width: max-content;
+    margin: 40px auto;
+    position: relative;
+    width: max-content;
 }
+
 .zoom-image .panzoom-parent {
-  height: 400px;
-  overflow: hidden;
-  user-select: none;
-  touch-action: none;
-  width: max-content;
+    height: 400px;
+    overflow: hidden;
+    user-select: none;
+    touch-action: none;
+    width: max-content;
 }
+
 .zoom-image .panzoom-parent #map-svg {
-  max-width: 100%;
-  max-height: 100%;
+    max-width: 100%;
+    max-height: 100%;
 }
+
 .zoom-image .panzoom-parent .hotspots {
-  position: absolute;
-  left: 0;
-  top: 0;
-  width: 100%;
-  height: 100%;
-  pointer-events: auto;
-  border-radius: 0 0 45px 45px;
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: auto;
+    border-radius: 0 0 45px 45px;
 }
+
 .zoom-image .panzoom-parent .hotspots .room-area {
-  cursor: pointer;
-  fill: transparent;
+    cursor: pointer;
+    fill: transparent;
 }
+
 .zoom-image .panzoom-parent .hotspots .room-area:hover {
-  fill: rgba(255, 0, 0, 0.3);
+    fill: rgba(255, 0, 0, 0.3);
 }
+
 .zoom-image-buttons {
-  display: flex;
-  align-items: flex-start;
-  gap: 10px;
-  position: absolute;
-  bottom: -34px;
-  left: 50%;
-  transform: translateX(-50%);
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    position: absolute;
+    bottom: -34px;
+    left: 50%;
+    transform: translateX(-50%);
 }
+
 .zoom-image-buttons .zoom-btn {
-  background: none;
-  outline: none;
-  border: none;
-  padding: 3px;
-  cursor: pointer;
+    background: none;
+    outline: none;
+    border: none;
+    padding: 3px;
+    cursor: pointer;
 }
+
 .zoom-image-buttons .zoom-btn:hover {
-  background: #f7f7f7;
+    background: #f7f7f7;
 }
+
 .zoom-image-buttons .zoom-btn[disabled] {
-  opacity: 0.2;
+    opacity: 0.2;
 }
+
 .zoom-image-buttons .reset-btn {
-  display: flex;
-  align-items: center;
-  gap: 7px;
+    display: flex;
+    align-items: center;
+    gap: 7px;
 }
+
 .zoom-image-buttons .reset-btn [disabled] {
-  opacity: 0.2;
+    opacity: 0.2;
 }
 
 #modal {
-  display: none;
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.6);
-  justify-content: center;
-  align-items: center;
-  z-index: 999;
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.6);
+    justify-content: center;
+    align-items: center;
+    z-index: 999;
 }
+
 #modal .modal-container {
-  position: relative;
-  background: #fff;
-  padding: 30px 20px 20px;
-  width: 500px;
-  height: 450px;
-  animation: zoomIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
-  transform: scale(1);
-  text-align: center;
+    position: relative;
+    background: #fff;
+    padding: 30px 20px 20px;
+    width: 500px;
+    height: 450px;
+    animation: zoomIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
+    transform: scale(1);
+    text-align: center;
 }
+
 #modal .modal-container #modal-svg {
-  width: max-content;
+    width: max-content;
 }
+
 #modal .modal-container #close {
-  position: absolute;
-  top: 12px;
-  font-size: 24px;
-  right: 10px;
-  cursor: pointer;
-  z-index: 10;
-  height: 20px;
-  width: 20px;
-  color: #000;
+    position: absolute;
+    top: 12px;
+    font-size: 24px;
+    right: 10px;
+    cursor: pointer;
+    z-index: 10;
+    height: 20px;
+    width: 20px;
+    color: #000;
 }
 
 @keyframes fadeInBg {
-  from {
-    opacity: 0;
-  }
-  to {
-    opacity: 1;
-  }
+    from {
+        opacity: 0;
+    }
+    to {
+        opacity: 1;
+    }
 }
+
 @keyframes zoomIn {
-  from {
-    opacity: 0;
-    transform: scale(0.6);
-  }
-  to {
-    opacity: 1;
-    transform: scale(1);
-  }
+    from {
+        opacity: 0;
+        transform: scale(0.6);
+    }
+    to {
+        opacity: 1;
+        transform: scale(1);
+    }
 }
+
 @media (max-width: 440px) {
-  .zoom-image {
-    transform: scale(0.8);
-  }
-  .modal-container {
-    padding: 30px 10px !important;
-    height: 460px !important;
-  }
+    .zoom-image {
+        transform: scale(0.8);
+    }
+
+    .modal-container {
+        zoom: 0.75;
+    }
 }
 
 /*# sourceMappingURL=style.css.map */
