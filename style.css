@@ -121,7 +121,8 @@
     transform: scale(0.8);
   }
   .modal-container {
-    transform: scale(0.75) !important;
+    padding: 30px 10px !important;
+    height: 460px !important;
   }
 }
 
