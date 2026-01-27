@@ -91,6 +91,7 @@
     background: #fff;
     padding: 30px 20px 20px;
     width: 500px;
+    min-width: max-content;
     height: 450px;
     animation: zoomIn 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275) forwards;
     transform: scale(1);
