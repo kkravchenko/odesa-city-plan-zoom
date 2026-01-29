@@ -8,12 +8,8 @@ document.addEventListener('DOMContentLoaded', () => {
         maxZoom: 10,
         fit: true,
         center: true,
+        wheelEnabled: false
     });
-
-    // panZoom.pan(10, 10)
-    // panZoom.zoom(2, {animate: true})
-
-    parent.addEventListener('wheel', panZoom.zoomWithWheel);
 
     const zoomInBtn = document.querySelector('.zoom-in');
     const zoomOutBtn = document.querySelector('.zoom-out');
