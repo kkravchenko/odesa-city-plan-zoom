@@ -139,6 +139,12 @@
   }
 }
 
+@media (max-width: 560px) {
+  .modal-container {
+    zoom: 0.9;
+  }
+}
+
 @media (max-width: 440px) {
   .zoom-image {
     transform: scale(.8);
