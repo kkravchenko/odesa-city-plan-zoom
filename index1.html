@@ -1,0 +1,65 @@
+<html>
+<head>
+    <title>SVG pan</title>
+</head>
+<body>
+
+<script src="https://unpkg.com/@panzoom/panzoom@4.6.1/dist/panzoom.min.js"></script>
+<script src="script.js"></script>
+<link href="style.css" rel="stylesheet"/>
+<div class="zoom-image">
+    <div class="panzoom-parent">
+        <img alt="bud1-plan" id="map-svg"
+             src="bud1-plan.svg"/>
+        <svg class="hotspots bud1-plan">
+            <polygon class="room-area" points="0,0 115,0 115,87 143,87 143,131 23,131 23,118 0,118"/>
+            <polygon class="room-area" points="112,0 193,0 193,8 205,8 205,112 140,112 140,88 112,88"/>
+            <polygon class="room-area" points="202,9 296,9 296,83 269,83 269,112 202,112"/>
+            <polygon class="room-area" points="292,0 402,0 402,112 267,112 267,80 292,80"/>
+            <polygon class="room-area"
+                     points="310,109 390,109 390,198 263,198 263,138 310,138"/>
+            <polygon class="room-area"
+                     points="293,265 403,265 403,400 298,400 298,305 293,305"/>
+            <polygon class="room-area"
+                     points="224,266 295,266 295,304 300,304 300,375 224,375"/>
+            <polygon class="room-area"
+                     points="172,265 228,265 228,375 185,375 185,400 135,400 135,323 172,323"/>
+            <polygon class="room-area"
+                     points="0,295 146,295 146,326 140,326 140,410 0,410"/>
+            <polygon class="room-area"
+                     points="36,210 147,210 147,298 22,298 22,248 36,248"/>
+            <polygon class="room-area"
+                     points="22,128 146,128 146,212 37,212 37,175 22,175"/>
+        </svg>
+    </div>
+
+    <div class="zoom-image-buttons">
+        <button class="zoom-btn zoom-in" title="Збільшити">
+            <svg fill="none" height="20px" viewBox="0 0 24 24" width="20px">
+                <path d="M20 20L14.9497 14.9497M14.9497 14.9497C16.2165 13.683 17 11.933 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17C11.933 17 13.683 16.2165 14.9497 14.9497ZM7 10H13M10 7V13"
+                      stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+            </svg>
+        </button>
+        <button class="zoom-btn zoom-out" disabled title="Зменшити">
+            <svg fill="none" height="20px" viewBox="0 0 24 24" width="20px">
+                <path d="M20 20L14.9497 14.9498M14.9497 14.9498C16.2165 13.683 17 11.933 17 10C17 6.13401 13.866 3 10 3C6.13401 3 3 6.13401 3 10C3 13.866 6.13401 17 10 17C11.933 17 13.683 16.2165 14.9497 14.9498ZM7 10H13"
+                      stroke="#000000" stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5"/>
+            </svg>
+        </button>
+        <button class="zoom-btn reset-btn" disabled title="Почати спочатку">
+            <svg fill="#000000" height="18px" id="icon" viewBox="0 0 32 32" width="18px">
+                <path d="M18,28A12,12,0,1,0,6,16v6.2L2.4,18.6,1,20l6,6,6-6-1.4-1.4L8,22.2V16H8A10,10,0,1,1,18,26Z"/>
+                <rect fill="none" height="32" width="32"/>
+            </svg>
+        </button>
+    </div>
+</div>
+
+<div id="modal">
+    <div class="modal-container">
+        <span id="close">&times;</span>
+        <svg height="400" id="modal-svg"></svg>
+    </div>
+</div>
+</body>
+</html>

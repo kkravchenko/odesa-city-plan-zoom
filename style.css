@@ -23,6 +23,9 @@
   pointer-events: auto;
   border-radius: 0 0 45px 45px;
 }
+.zoom-image .panzoom-parent .hotspots.bud1-plan {
+  border-radius: 33px 0 0 33px;
+}
 .zoom-image .panzoom-parent .hotspots .room-area {
   cursor: pointer;
   fill: transparent;

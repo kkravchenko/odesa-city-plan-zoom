@@ -24,6 +24,10 @@
       pointer-events: auto;
       border-radius: 0 0 45px 45px;
 
+      &.bud1-plan {
+        border-radius: 33px 0 0 33px;
+      }
+
       .room-area {
         cursor: pointer;
         fill: transparent;

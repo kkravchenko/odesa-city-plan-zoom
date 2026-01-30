@@ -98,7 +98,6 @@ document.addEventListener('DOMContentLoaded', () => {
             defs.appendChild(clip);
             modalSvg.appendChild(defs);
 
-            console.log(`translate(${tx}px, ${ty}px) scale(${scale})`)
             // Добавляем изображение
             const img = document.createElementNS("http://www.w3.org/2000/svg", "image");
             img.setAttributeNS(null, 'href', image.getAttribute('src'));
@@ -108,7 +107,6 @@ document.addEventListener('DOMContentLoaded', () => {
             img.setAttribute('clip-path', 'url(#clip)');
             modalSvg.appendChild(img);
 
-            console.log(bbox.width, scale)
             modalSvg.style.width = `${bbox.width * scale}px`
 
             modal.style.display = 'flex';
