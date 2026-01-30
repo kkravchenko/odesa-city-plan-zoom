@@ -103,8 +103,9 @@ document.addEventListener('DOMContentLoaded', () => {
             img.setAttributeNS(null, 'href', image.getAttribute('src'));
             img.setAttribute('height', modalH);
             img.setAttribute('preserveAspectRatio', 'xMinYMin meet');
-            img.style.transform = `translate3d(${tx}px, ${ty}px, 0) scale(${scale})`;
-            img.style.willChange = 'transform';
+            // img.style.transform = `translate3d(${tx}px, ${ty}px, 0) scale(${scale})`;
+            // img.style.willChange = 'transform';
+            img.style.transform = `matrix(${scale}, 0, 0, ${scale}, ${tx}, ${ty})`;
             img.setAttribute('clip-path', 'url(#clip)');
             modalSvg.appendChild(img);
 
