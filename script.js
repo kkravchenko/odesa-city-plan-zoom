@@ -1,74 +1,76 @@
 document.addEventListener('DOMContentLoaded', () => {
-    const el = document.querySelector('#map-svg');
-    const panZoom = Panzoom(el, {
-        zoomEnabled: true,
-        controlIconsEnabled: true,
-        minZoom: 1,
-        minScale: 1,
-        maxZoom: 10,
-        fit: true,
-        center: true,
-        wheelEnabled: false
-    });
+    document.querySelectorAll('.map-svg').forEach((el) => {
+        const panZoom = Panzoom(el, {
+            zoomEnabled: true,
+            controlIconsEnabled: true,
+            minZoom: 1,
+            minScale: 1,
+            maxZoom: 10,
+            fit: true,
+            center: true,
+            wheelEnabled: false
+        });
 
-    const zoomInBtn = document.querySelector('.zoom-in');
-    const zoomOutBtn = document.querySelector('.zoom-out');
-    const resetBtn = document.querySelector('.reset-btn');
-    const hotspots = document.querySelector('.hotspots');
-    zoomInBtn.addEventListener('click', () => {
-        panZoom.zoomIn();
-        updateZoomButtons();
-    });
-    zoomOutBtn.addEventListener('click', () => {
-        panZoom.zoomOut();
-        updateZoomButtons();
-    });
+        const zoomInBtn = document.querySelector('.zoom-in');
+        const zoomOutBtn = document.querySelector('.zoom-out');
+        const resetBtn = document.querySelector('.reset-btn');
+        const hotspots = document.querySelector('.hotspots');
+        zoomInBtn.addEventListener('click', () => {
+            panZoom.zoomIn();
+            updateZoomButtons();
+        });
+        zoomOutBtn.addEventListener('click', () => {
+            panZoom.zoomOut();
+            updateZoomButtons();
+        });
 
-    function updateZoomButtons() {
-        const scale = panZoom.getScale();
-        if (scale > 1) {
-            zoomOutBtn.removeAttribute('disabled');
-            resetBtn.removeAttribute('disabled');
-            hotspots.style.display = 'none';
-        } else {
-            zoomOutBtn.setAttribute('disabled', 'disabled');
-            resetBtn.setAttribute('disabled', 'disabled');
-            hotspots.style.display = 'block';
-        }
-    }
-
-    parent.addEventListener('wheel', () => {
-        setTimeout(updateZoomButtons, 10); // маленькая задержка для обновления scale
-    });
-
-    document.querySelector('.zoom-image').addEventListener('pointermove', function () {
-        const c = panZoom.getPan();
-        if (c.x !== 0 || c.y !== 0) {
+        function updateZoomButtons() {
             const scale = panZoom.getScale();
-            resetBtn.removeAttribute('disabled');
-            hotspots.style.display = 'none';
-        } else {
-            const scale = panZoom.getScale();
-            if (scale === 0) {
+            if (scale > 1) {
+                zoomOutBtn.removeAttribute('disabled');
+                resetBtn.removeAttribute('disabled');
+                hotspots.style.display = 'none';
+            } else {
+                zoomOutBtn.setAttribute('disabled', 'disabled');
                 resetBtn.setAttribute('disabled', 'disabled');
                 hotspots.style.display = 'block';
             }
         }
-    })
 
-    resetBtn.addEventListener('click', () => {
-        panZoom.reset();
-        updateZoomButtons();
+        parent.addEventListener('wheel', () => {
+            setTimeout(updateZoomButtons, 10); // маленькая задержка для обновления scale
+        });
+
+        document.querySelector('.zoom-image').addEventListener('pointermove', function () {
+            const c = panZoom.getPan();
+            if (c.x !== 0 || c.y !== 0) {
+                const scale = panZoom.getScale();
+                resetBtn.removeAttribute('disabled');
+                hotspots.style.display = 'none';
+            } else {
+                const scale = panZoom.getScale();
+                if (scale === 0) {
+                    resetBtn.setAttribute('disabled', 'disabled');
+                    hotspots.style.display = 'block';
+                }
+            }
+        })
+
+        resetBtn.addEventListener('click', () => {
+            panZoom.reset();
+            updateZoomButtons();
+        });
     });
 
     // *********************************
     const modal = document.getElementById('modal');
     const closeBtn = document.getElementById('close');
     const modalSvg = document.getElementById('modal-svg');
-    const image = document.getElementById('map-svg');
 
     document.querySelectorAll('.room-area').forEach(polygon => {
         polygon.addEventListener('click', () => {
+            const image = polygon.parentNode.parentNode.querySelector('.map-svg');
+
             const bbox = polygon.getBBox();
             const points = polygon.getAttribute('points');
 
@@ -76,7 +78,6 @@ document.addEventListener('DOMContentLoaded', () => {
             const modalW = 500;
             const modalH = 400;
 
-            console.log(bbox)
             const scaleX = modalW / bbox.width;
             const scaleY = modalH / bbox.height;
 
@@ -115,10 +116,8 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-// Закрытие модального окна
+    // Закрытие модального окна
     closeBtn.addEventListener('click', () => {
         modal.style.display = 'none';
     });
-
-
 });
