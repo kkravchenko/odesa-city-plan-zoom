@@ -11,10 +11,12 @@ document.addEventListener('DOMContentLoaded', () => {
             wheelEnabled: false
         });
 
-        const zoomInBtn = document.querySelector('.zoom-in');
-        const zoomOutBtn = document.querySelector('.zoom-out');
-        const resetBtn = document.querySelector('.reset-btn');
-        const hotspots = document.querySelector('.hotspots');
+        const parentNode = el.parentNode.parentNode;
+
+        const zoomInBtn = parentNode.querySelector('.zoom-in');
+        const zoomOutBtn = parentNode.querySelector('.zoom-out');
+        const resetBtn = parentNode.querySelector('.reset-btn');
+        const hotspots = parentNode.querySelector('.hotspots');
         zoomInBtn.addEventListener('click', () => {
             panZoom.zoomIn();
             updateZoomButtons();
@@ -41,7 +43,7 @@ document.addEventListener('DOMContentLoaded', () => {
             setTimeout(updateZoomButtons, 10); // маленькая задержка для обновления scale
         });
 
-        document.querySelector('.zoom-image').addEventListener('pointermove', function () {
+        parentNode.addEventListener('pointermove', function () {
             const c = panZoom.getPan();
             if (c.x !== 0 || c.y !== 0) {
                 const scale = panZoom.getScale();
