@@ -107,8 +107,11 @@ document.addEventListener('DOMContentLoaded', () => {
             img.setAttribute('height', modalH);
             img.setAttribute('preserveAspectRatio', 'xMinYMin meet');
             // img.style.transform = `translate3d(${tx}px, ${ty}px, 0) scale(${scale})`;
-            // img.style.willChange = 'transform';
+            img.style.willChange = 'transform';
+            img.style.backfaceVisibility = 'hidden';
+            img.style.webkitBackfaceVisibility = 'hidden';
             img.style.transform = `matrix(${scale}, 0, 0, ${scale}, ${tx}, ${ty})`;
+            img.style.webkitTransform = `matrix(${scale}, 0, 0, ${scale}, ${tx}, ${ty})`;
             img.setAttribute('clip-path', 'url(#clip)');
             modalSvg.appendChild(img);
 
